@@ -1,0 +1,25 @@
+{% load static %}
+<div class="popup-content">
+<div class="close-xmark" style="color: #fff; margin: auto 0; position: absolute; left: auto; right: 5px; cursor: pointer;" onclick="closePopupForm()"><i class="fa-solid fa-xmark fa-lg" style="color: #ffffff;"></i></div>    
+<div class="popup-header" id="popupHeader">Contact us</div>
+<div class="popup-mini-header" id="popupMiniHeader">I would love to talk to you</div>
+<div class="main-contact-menu">
+    <form method="post">
+      {% csrf_token %}
+      <p>
+        <label for="id_name" id="label0">Your name</label>
+        {{ form.name }}
+      </p>
+      <p>
+        <label for="id_name" id="label1">Your Email</label>
+        {{ form.email }}
+      </p>
+      <p>
+        <label for="id_email" id="label2">Text of message</label>
+        {{ form.text }}
+      </p>
+      <div></div>
+      <div class="submit-btn"><button type="submit" id="submitEmail">Submit</button></div>
+    </form>
+</div>
+</div>

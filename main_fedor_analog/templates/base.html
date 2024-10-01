@@ -1,0 +1,86 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Fedor Analog</title>
+  <meta name="description" content="I believe that modern technologies are both a threat and a blessing. In the next 40 years, the world could either be destroyed or united in happiness and freedom through today's technologies.
+
+My goal is to achieve the latter with my expertise in modern technologies by helping people and businesses.
+
+Why me?
+Your understanding and your success are making the world a better place. We need it.">
+  <link rel="shortcut icon" type="image/x-icon" href="{% static 'icon/favicon.ico' %}">
+  <link rel="preload" href="{% static  'css/mini_style.css' %}" as="style" onload="this.rel='stylesheet'"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://kit.fontawesome.com/6541b5e2da.js" crossorigin="anonymous"></script>
+  <script type="text/javascript" src="{% static 'js/script.js' %}"></script>
+  <!--<script type="text/javascript" src="articles.js"></script>-->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  </head>
+<body>
+  <div class="overlay" id="overlay" onclick="closePopupForm()"></div>
+  <header>
+      {% include 'header.html' %}
+  </header>
+
+  <main>
+      {% block content %}
+      {% endblock %}
+  </main>
+
+  <div class="popup-contact" id="popupForm">
+      {% include 'quest_form.html' %}
+  </div>
+
+  <footer>
+    {% include 'footer.html' %}
+  </footer>
+
+  <extra-footer>
+    <div id="popup" class="popup-hidden">
+       <div class="text-footer" id="extraFooter">Automated analysis of texts or data within the meaning of art.-4 directive 2019/790 / EU and the use of this website for AI training are prohibited without the consent of the rights. Don't worry about cookies, we only use cookies for CSRF token, icons and session ID</div>
+       <button id="closePopup" class="close-btn" style="color:#fff;">OK</button>
+   </div>
+    <div class="text-footer" id="xzibitum">All rights reserved. Powered by <a class="xzibitum" href="https://t.me/XZiBiTuM" target="_blank">XZiBiTuM</a></div>
+  </extra-footer>
+
+<script>
+    function openPopupForm(event) {
+        if (event) {
+            event.preventDefault();
+        }
+        const popupForm = document.getElementById('popupForm');
+        popupForm.style.display = 'block';
+        popupForm.classList.add('fade-in');
+        document.getElementById('overlay').style.display = 'block';
+        document.documentElement.style.overflowY = 'hidden';
+    }
+
+    function closePopupForm() {
+        const popupForm = document.getElementById('popupForm');
+        popupForm.classList.remove('fade-in');
+        popupForm.classList.add('fade-out');
+        setTimeout(() => {
+            popupForm.style.display = 'none';
+            popupForm.classList.remove('fade-out');
+        }, 300);
+        document.getElementById('overlay').style.display = 'none';
+        document.documentElement.style.overflowY = "auto";
+    }
+
+    document.addEventListener("DOMContentLoaded", function() {
+        const popup = document.getElementById('popup');
+        const closeButton = document.getElementById('closePopup');
+
+        popup.classList.remove('popup-hidden');
+        popup.classList.add('popup-visible');
+
+        closeButton.addEventListener('click', function() {
+            popup.classList.remove('popup-visible');
+            popup.classList.add('popup-hidden');
+        });
+    });
+</script>
+</body>
+</html>

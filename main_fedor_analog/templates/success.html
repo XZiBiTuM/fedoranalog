@@ -1,0 +1,21 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Fedor Analog | Success</title>
+  <link rel="shortcut icon" type="image/x-icon" href="{% static 'icon/favicon.ico' %}">
+  <link rel="preload" href="{% static  'css/style.css' %}" as="style" onload="this.rel='stylesheet'"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  </head>
+<body>
+    {% if selected_language == 'en' %}
+        <h1 style="text-align: center; margin-top: 25%;">Thank you for your message</h1>
+        <a href="/" style="margin-top: -2%;"><h2>Go back</h2></a>
+    {% else %}
+        <h1 style="text-align: center; margin-top: 25%;">Děkuji za vaše odvolání</h1>
+        <a href="/" style="margin-top: -2%;"><h2>Zpět</h2></a>
+    {% endif %}
+</body>
+</html>

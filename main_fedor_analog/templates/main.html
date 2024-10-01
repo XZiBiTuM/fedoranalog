@@ -1,0 +1,217 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    <div class="start fade-in-element">
+      <div class="name fade-in-element">
+        <div class="name-main fade-in-element">
+          <div class="fedor fade-in-element" id="name">Fedor Fedorchuk</div>
+          <div class="description fade-in-element" id="job">Research. Education. Change</div>
+        </div>
+        <div class="tag fade-in-element" id="branding">
+          "To live thinking!"
+        </div>
+      </div>
+      <div class="img-me fade-in-element"></div>
+    </div>
+
+    <div class="about fade-in-element">
+      <div class="about-text fade-in-element" id="aboutHeader">About Me</div>
+      <div class="about-photo-text fade-in-element">
+        <div class="avatar fade-in-element"></div>
+        <div class="about-me-text fade-in-element">
+          <div class="avatar-header fade-in-element" id="aboutGreeting">Hey, I'm Fedor Fedorchuk!</div>
+          <div class="avatar-mini-header fade-in-element" id="aboutJob">Visionary and futurist</div>
+          <div class="avatar-main-text fade-in-element" id="aboutMe">I believe that modern technologies are both a threat and a blessing. In the next 40 years, the world could either be destroyed or united in happiness and freedom through today's technologies.
+            <br><br>
+            My goal is to achieve the latter with my expertise in modern technologies by helping people and businesses.
+            <br><br>
+            Why should you work with me?
+            <br>
+            Your understanding and success contribute to making the world a better place. We need that.
+            <br><br>
+            Feel free to reach out for help with your project, organizing an event, or making an appearance. My know-how is yours.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="skills fade-in-element">
+      <div class="skills-text fade-in-element" id="skills">My Skills</div>
+      <div class="skills-blocks fade-in-element">
+        <div class="skill-columns">
+          <div class="skill fade-in-element">
+            <div class="skill-point fade-in-element">
+              <div class="skill-icon fade-in-element">
+                <i class="fa-solid fa-icons fa-2xl" style="color: #6C7BFF;"></i>
+              </div>
+              <div class="skill-header fade-in-element" id="skillHeader1">
+                Content production
+              </div>
+              <div class="skill-text fade-in-element" id="skillText1">
+                Job with text, pictures and videos to make different things more clear.
+              </div>
+            </div>
+          </div>
+          <div class="skill fade-in-element">
+            <div class="skill-point fade-in-element">
+              <div class="skill-icon fade-in-element">
+                <i class="fa-brands fa-instagram fa-2xl" style="color: #6C7BFF;"></i>
+              </div>
+              <div class="skill-header fade-in-element" id="skillHeader2">
+                Publishing activity
+              </div>
+              <div class="skill-text fade-in-element" id="skillText2">
+                Personal blog, academical papers for demonstrating the view.
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="skill-columns">
+          <div class="skill fade-in-element">
+            <div class="skill-point fade-in-element">
+              <div class="skill-icon fade-in-element">
+                <i class="fa-solid fa-globe fa-2xl" style="color: #6C7BFF;"></i>
+              </div>
+              {% if selected_language == 'en' %}
+                  <div class="skill-header fade-in-element" id="skillHeader3" title="* Web 3 - this is a new generation of Internet technology, AI - Artificial Intelligence, IP - Intellectual Property" style="cursor: pointer">
+                    Web3+AI+IP;
+                  </div>
+              {% else %}
+                  <div class="skill-header fade-in-element" id="skillHeader3" title="* Web 3-Jedná se o novou generaci internetové technologie, AI-umělá inteligence, IP-Duševní vlastnictví" style="cursor: pointer">
+                    Web3+AI+IP;
+                  </div>
+              {% endif %}
+              <div class="skill-text fade-in-element" id="skillText3">
+                Combination that represents all my legal knowledge in just 8 words.
+              </div>
+            </div>
+          </div>
+          <div class="skill fade-in-element">
+            <div class="skill-point fade-in-element">
+              <div class="skill-icon fade-in-element">
+                <i class="fa-regular fa-user fa-2xl" style="color: #6C7BFF;"></i>
+              </div>
+              <div class="skill-header fade-in-element" id="skillHeader4">
+                Pedagogical activity
+              </div>
+              <div class="skill-text fade-in-element" id="skillText4">
+                If you have knowledge in any field, you should be able to pass this information on to others.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="articles fade-in-element">
+      <div class="articles-text fade-in-element" id="articlesHeader">My Articles</div>
+      <!--<div class="slider active"> delete -->
+      {% for article in articles %}
+          {% if selected_language == 'en' %}
+            {% if article.reversed is False %}
+                <div class="articles-photo-text fade-in-element {% if forloop.last %}{{ '' }}{% else %}border{% endif %}"> <!-- .border -->
+                    <div class="articles-avatar fade-in-element" style="background-image: url('{{ article.img.url }}')"></div>
+                    <div class="articles-me-text fade-in-element">
+                        <div class="articles-header fade-in-element">{{ article.title_en }}</div>
+                        <div class="articles-main-text fade-in-element">{{ article.content_en }}...</div>
+                        <a href="{{ article.pdf_en.url }}" class="read-link" target="_blank">
+                            <div class="read-more-btn">
+                                <div class="read-text">Read more</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            {% else %}
+                <div class="articles-photo-text-reverse fade-in-element {% if forloop.last %}{{ '' }}{% else %}border{% endif %}">
+                    <div class="articles-avatar-reverse fade-in-element" style="background-image: url('{{ article.img.url }}')"></div>
+                    <div class="articles-me-text-reverse fade-in-element">
+                        <div class="articles-header-reverse fade-in-element">{{ article.title_en }}</div>
+                        <div class="articles-main-text-reverse fade-in-element">{{ article.content_en }}...</div>
+                        <a href="{{ article.pdf_en.url }}" class="read-link" target="_blank">
+                            <div class="read-more-btn">
+                                <div class="read-text">Read more</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            {% endif %}
+          {% else %}
+            {% if article.reversed is False %}
+                <div class="articles-photo-text fade-in-element {% if forloop.last %}{{ '' }}{% else %}border{% endif %}"> <!-- .border -->
+                    <div class="articles-avatar fade-in-element" style="background-image: url('{{ article.img.url }}')"></div>
+                    <div class="articles-me-text fade-in-element">
+                        <div class="articles-header fade-in-element">{{ article.title_cz }}</div>
+                        <div class="articles-main-text fade-in-element">{{ article.content_cz }}...</div>
+                        <a href="{{ article.pdf_cz.url }}" class="read-link" target="_blank">
+                            <div class="read-more-btn">
+                                <div class="read-text">Read more</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            {% else %}
+                <div class="articles-photo-text-reverse fade-in-element {% if forloop.last %}{{ '' }}{% else %}border{% endif %}">
+                    <div class="articles-avatar-reverse fade-in-element" style="background-image: url('{{ article.img.url }}')"></div>
+                    <div class="articles-me-text-reverse fade-in-element">
+                        <div class="articles-header-reverse fade-in-element">{{ article.title_cz }}</div>
+                        <div class="articles-main-text-reverse fade-in-element">{{ article.content_cz }}...</div>
+                        <a href="{{ article.pdf_cz.url }}" class="read-link" target="_blank">
+                            <div class="read-more-btn">
+                                <div class="read-text">Read more</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            {% endif %}
+          {% endif %}
+    {% endfor %}
+
+    </div>
+      <!--<div class="slider-dots fade-in-element">
+        <span class="dot active"></span>
+        <span class="dot"></span>
+      </div>
+    </div>-->
+
+  <div class="contacts fade-in-element">
+      <div class="contacts-text fade-in-element" id="contacts">Contacts</div>
+      <!--<div class="contacts-photo"></div>-->
+      <div class="contacts-blocks fade-in-element">
+        <div class="block fade-in-element">
+          <div class="icon fade-in-element"><i class="fa-solid fa-envelope fa-2xl" style="color: #6C7BFF;"></i></div>
+          <div class="one fade-in-element"><a href="mailto:ffedorchuk@seznam.cz" class="contact-link">ffedorchuk@seznam.cz</a></div>
+        <!--<div class="two fade-in-element"><a href="mailto:fedor@inspector.cz" class="contact-link">fedor@inspector.cz</a></div> -->
+        </div>
+        <div class="block fade-in-element">
+          <div class="icon fade-in-element"><i class="fa-solid fa-comments fa-2xl" style="color: #6C7BFF;"></i></div>
+          <div class="one fade-in-element"><a class="contact-link" onclick="openPopupForm(event)" id="contactMe" style="cursor: pointer;">Write to me right now</a></div>
+          <!--<div class="two fade-in-element"><a href="tel:+420322819229" class="contact-link">+420322819229</a></div>-->
+        </div>
+        <div class="block fade-in-element">
+          <div class="icon fade-in-element"><i class="fa-solid fa-map fa-2xl" style="color: #6C7BFF;"></i></div>
+          <div class="one fade-in-element"><a href="https://www.google.ru/maps/place/Прага,+Чехия/@50.0597729,14.3004761,11z/data=!3m1!4b1!4m6!3m5!1s0x470b939c0970798b:0x400af0f66164090!8m2!3d50.0755381!4d14.4378005!16zL20vMDV5d2c?entry=ttu" class="contact-link" target="_blank" id="address">Prague, Czech</a></div>
+          <!--<div class="two fade-in-element"><p class="contact-link">Hostivař, Praha 15, Praha</p></div>-->
+        </div>
+        <div class="block fade-in-element">
+          <div class="icon fade-in-element"><i class="fa-brands fa-discord fa-2xl" style="color: #6C7BFF;"></i></div>
+          <div class="one fade-in-element"><a href="https://discord.gg/7SuzVwYf" class="contact-link" target="_blank" id="ds">My Discord Server</a></div>
+          <!--<div class="two fade-in-element"><a href="#" class="contact-link" target="_blank">My TG</a></div>-->
+        </div>
+      </div>
+  </div>
+
+  <div class="link-block fade-in-element">
+    <div class="link-img fade-in-element">
+      <div class="link-text fade-in-element">
+        <div class="link-header fade-in-element" id="linkHeader">Stay in touch with me</div>
+        <div class="link-text-mini fade-in-element" id="linkText">Subscribe to my social media to receive all the news first and always be up-to-date.</div>
+        <div class="link-button-extra fade-in-element">
+          <div class="tg fade-in-element"><a href="https://t.me/digitalfedor" class="contact-header-link" target="_blank"><i class="fa-brands fa-telegram fa-lg"></i></a></div>
+          <div class="inst fade-in-element"><a href="https://www.instagram.com/inspektorfedor?igsh=OGQ5ZDc2ODk2ZA==" class="contact-header-link" target="_blank"><i class="fa-brands fa-instagram fa-lg"></i></a></div>
+          <div class="youtube fade-in-element"><a href="https://www.youtube.com/@Inspektor_Fedor" class="contact-header-link" target="_blank"><i class="fa-brands fa-youtube fa-lg"></i></a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

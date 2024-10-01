@@ -1,0 +1,95 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+      <div class="solutions fade-in-element">
+      <div class="back-solutions-flex-container"><div class="back-btn-52"><a href="/"><i class="fa-solid fa-chevron-left"></i></a></div><div class="solutions-text fade-in-element" id="solutions">What do I do?</div></div>
+      <div class="solutions-content fade-in-element">
+        <div class="problem-header fade-in-element" id="problemHeader">As a society, we currently face several problems:</div>
+        <div class="problems-blocks fade-in-element">
+            <div class="problems fade-in-element">
+                <div class="problem fade-in-element">
+                    <div class="problem-icon fade-in-element"><i class="fa-solid fa-wheat-awn-circle-exclamation fa-2xl" style="color: red;"></i></div>
+                    <div class="problem-text fade-in-element" id="problem1">We are running out of resources.</div>
+                </div>
+                <div class="problem fade-in-element">
+                    <div class="problem-icon fade-in-element"><i class="fa-solid fa-robot fa-2xl" style="color: red;"></i></div>
+                    <div class="problem-text fade-in-element" id="problem2">The work of each of us can be replaced by AI.</div>
+                </div>
+                <div class="problem fade-in-element">
+                    <div class="problem-icon fade-in-element"><i class="fa-solid fa-user-shield fa-2xl" style="color: red;"></i></div>
+                    <div class="problem-text fade-in-element" id="problem3">We are all increasingly concerned about our safety.</div>
+                </div>
+                <div class="problem fade-in-element">
+                    <div class="problem-icon fade-in-element"><i class="fa-solid fa-user-lock fa-2xl" style="color: red;"></i></div>
+                    <div class="problem-text fade-in-element" id="problem4">We are steadily losing our freedom.</div>
+                </div>
+                <div class="problem fade-in-element">
+                    <div class="problem-icon fade-in-element"><i class="fa-solid fa-people-arrows fa-2xl" style="color: red;"></i></div>
+                    <div class="problem-text fade-in-element" id="problem5">We are gradually losing real human contact.</div>
+                </div>
+            </div>
+        </div>
+        <div class="solutions-big-block fade-in-element">
+            <div class="solutions-img-text fade-in-element">
+                <div class="but fade-in-element" id="but">But...</div>
+                <div class="solutions-img fade-in-element"></div>
+            </div>
+            <div class="solutions-big-text fade-in-element">
+                <div class="solutions-small-header fade-in-element" id="solSmallHeader">
+                    I don’t know exactly how to solve these problems, but I do know the path. First, we need to explore these issues, then discuss them, and finally resolve them. We have the energy to do this.
+                    <br><br>
+                </div>
+                <div class="solutions-small-text fade-in-element" id="solSmallText">
+                    In my opinion, blockchain, GAI, and telecommunications can solve all these problems and unite humanity, which will also open the way beyond Earth, directly into space.
+                    <br><br>
+                    To fulfill this vision, I write blogs, articles, create video content, and, above all, I talk. This is how I bring my vision of the world closer.
+                    <br><br>
+                    It might seem utopian and foolish to you, and you have every right to think so. As I say, it’s always about communication. If you have something to say, reach out; I’d be happy to talk with you too. <b>It will help everyone.</b>
+                </div>
+            </div>
+        </div>
+      </div>
+  </div>
+
+  <div class="contacts fade-in-element">
+      <div class="contacts-text fade-in-element" id="contacts">Contacts</div>
+      <!--<div class="contacts-photo"></div>-->
+      <div class="contacts-blocks fade-in-element">
+        <div class="block fade-in-element">
+          <div class="icon fade-in-element"><i class="fa-solid fa-envelope fa-2xl" style="color: #6C7BFF;"></i></div>
+          <div class="one fade-in-element"><a href="mailto:fedor@digital.cz" class="contact-link">fedor@digital.cz</a></div>
+        <!--<div class="two fade-in-element"><a href="mailto:fedor@inspector.cz" class="contact-link">fedor@inspector.cz</a></div> -->
+        </div>
+        <div class="block fade-in-element">
+          <div class="icon fade-in-element"><i class="fa-solid fa-comments fa-2xl" style="color: #6C7BFF;"></i></div>
+          <div class="one fade-in-element"><a class="contact-link" onclick="openPopupForm(event)" id="contactMe" style="cursor: pointer;">Write to me right now</a></div>
+          <!--<div class="two fade-in-element"><a href="tel:+420322819229" class="contact-link">+420322819229</a></div>-->
+        </div>
+        <div class="block fade-in-element">
+          <div class="icon fade-in-element"><i class="fa-solid fa-map fa-2xl" style="color: #6C7BFF;"></i></div>
+          <div class="one fade-in-element"><a href="https://www.google.ru/maps/place/Прага,+Чехия/@50.0597729,14.3004761,11z/data=!3m1!4b1!4m6!3m5!1s0x470b939c0970798b:0x400af0f66164090!8m2!3d50.0755381!4d14.4378005!16zL20vMDV5d2c?entry=ttu" class="contact-link" target="_blank" id="address">Prague, Czech</a></div>
+          <!--<div class="two fade-in-element"><p class="contact-link">Hostivař, Praha 15, Praha</p></div>-->
+        </div>
+        <div class="block fade-in-element">
+          <div class="icon fade-in-element"><i class="fa-brands fa-discord fa-2xl" style="color: #6C7BFF;"></i></div>
+          <div class="one fade-in-element"><a href="https://discord.gg/7SuzVwYf" class="contact-link" target="_blank" id="ds">My Discord Server</a></div>
+          <!--<div class="two fade-in-element"><a href="#" class="contact-link" target="_blank">My TG</a></div>-->
+        </div>
+      </div>
+  </div>
+
+  <div class="link-block fade-in-element">
+    <div class="link-img fade-in-element">
+      <div class="link-text fade-in-element">
+        <div class="link-header fade-in-element" id="linkHeader">Stay in touch with me</div>
+        <div class="link-text-mini fade-in-element" id="linkText">Subscribe to my social media to receive all the news first and always be up-to-date.</div>
+        <div class="link-button-extra fade-in-element">
+          <div class="tg fade-in-element"><a href="https://t.me/digitalfedor" class="contact-header-link" target="_blank"><i class="fa-brands fa-telegram fa-lg"></i></a></div>
+          <div class="inst fade-in-element"><a href="https://www.instagram.com/inspektorfedor?igsh=OGQ5ZDc2ODk2ZA==" class="contact-header-link" target="_blank"><i class="fa-brands fa-instagram fa-lg"></i></a></div>
+          <div class="youtube fade-in-element"><a href="https://www.youtube.com/@Inspektor_Fedor" class="contact-header-link" target="_blank"><i class="fa-brands fa-youtube fa-lg"></i></a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

@@ -1,0 +1,43 @@
+{% load static %}
+<div class="header fade-in-element">
+    <div class="header-ex fade-in-element">
+        <div class="logo_two"><div class="logo fade-in-element" id="logo" style="color: white">Fedor Analog</div><div class="logo fade-in-element" style="color: white;">|</div><div class="logo-second-part fade-in-element" id="logoTwo" style="color: white">What do I do?</div></div>
+        <div class="menu-toggle" id="menu-toggle" style="color: #fff;">
+            <i class="fa-solid fa-bars fa-lg"></i>
+        </div>
+        <div class="media fade-in-element" id="media-menu">
+            <div class="lang fade-in-element pc" id="drop-show-lang">CZ<i class="fa-solid fa-chevron-down arrow-margin" style="cursor: pointer"></i></div>
+            <div class="lang-list" id="langs-list-id">
+                {% if selected_language == 'en' %}
+                    <div class="en" data-lang="en">EN</div>
+                    <div class="cz" data-lang="cz">CZ</div>
+                {% else %}
+                    <div class="cz" data-lang="cz">CZ</div>
+                    <div class="en" data-lang="en">EN</div>
+                {% endif %}
+            </div>
+            <div class="tg fade-in-element"><a href="https://t.me/digitalfedor" class="contact-header-link" target="_blank"><i class="fa-brands fa-telegram fa-lg"></i></a></div>
+            <div class="inst fade-in-element"><a href="https://www.instagram.com/inspektorfedor?igsh=OGQ5ZDc2ODk2ZA==" class="contact-header-link" target="_blank"><i class="fa-brands fa-instagram fa-lg"></i></a></div>
+            <div class="youtube fade-in-element"><a href="https://www.youtube.com/@Inspektor_Fedor" class="contact-header-link" target="_blank"><i class="fa-brands fa-youtube fa-lg"></i></a></div>
+        </div>
+    </div>
+</div>
+
+<script>
+    document.getElementById('menu-toggle').addEventListener('click', function() {
+        let mediaMenu = document.getElementById('media-menu');
+        if (mediaMenu.classList.contains('show')) {
+            mediaMenu.classList.remove('fade-in');
+            mediaMenu.classList.add('fade-out');
+            setTimeout(() => {
+                mediaMenu.classList.remove('show');
+            }, 300);
+        } else {
+            mediaMenu.classList.add('show');
+            mediaMenu.classList.remove('fade-out');
+            mediaMenu.classList.add('fade-in');
+        }
+    });
+</script>
+
+

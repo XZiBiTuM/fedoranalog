@@ -1,0 +1,47 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>404</title>
+</head>
+<style>
+    body {
+        margin: 0;
+        overflow: hidden;
+        padding: 0;
+        background-image: url('/static/images/404.jpg');
+        background-size: cover;
+        width: 100vw;
+        height: 100vh;
+    }
+    .m404 {
+        margin-top: 50px;
+        text-align: center;
+        font-size: 55px;
+        font-weight: 800;
+	    font-family: Plus Jakarta Sans, serif;
+        color: #fff;
+    }
+    .mm404 {
+        margin-top: 10px;
+        text-align: center;
+        font-size: 25px;
+        font-weight: 600;
+	    font-family: Plus Jakarta Sans, serif;
+        color: #fff;
+    }
+    .mm404a:visited {
+        color: #fff;
+    }
+</style>
+<body>
+    {% if selected_language == 'en' %}
+        <div class="m404">404. It seems that you have gone beyond the boundaries.</div>
+        <div class="mm404"><a class="mm404a" href="/">Go to main page</a></div>
+    {% else %}
+        <div class="m404">404. Zdá se, že jste překročili hranice.</div>
+        <div class="mm404"><a class="mm404a" href="/">Přejít na hlavní stránku</a></div>
+    {% endif %}
+</body>
+</html>
